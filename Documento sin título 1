@@ -1,0 +1,130 @@
+
+.MODEL SMALL
+
+.STACK
+
+.DATA
+
+    ;numeros DB 20,12,17,26
+    n1 db 20
+    n2 db 12
+    n3 db 17
+    n4 db 26
+    
+.CODE
+
+
+    Main:
+    
+        MOV AX,@DATA
+        MOV DS,AX
+        
+        MOV CX,4
+        
+        MOV BX,OFFSET numeros  ;OFFSET Asigna la primera ubicacion de memoria de la cadena de numeros
+        
+        ETA:
+        
+            MOV AL,[BX]         ;MOVER el contenido dado por la [Direccion] a AL
+            ADD AL,5           ; ADDITION +5, SUMAR 5 A AL
+            
+            ;DAA                 ;EFECTUAR BIEN LA SUMA
+            
+            ADD AL,30H
+             
+             
+            LEA DL,AL
+            MOV AH,02
+            INT 21H
+             
+            INC BX              ;INCREMENTAR BX EN 1 O posicion+1
+            
+            LOOP ETA            ; REGRESAR A LA ETIQUETA SI CX NO ES CERO Y CADA QUE SE USA LOOP DECREMETNA CX
+            
+        
+        
+        
+
+        
+        
+        
+        
+        
+
+        
+        
+        MOV AX,4C00H
+        INT 21H 
+         
+        
+        
+        
+     END Main
+            
+.MODEL SMALL
+
+.STACK
+
+.DATA
+
+    ;numeros DB 20,12,17,26
+    n1 db 20
+    n2 db 12
+    n3 db 17
+    n4 db 26
+    
+.CODE
+
+
+    Main:
+    
+        MOV AX,@DATA
+        MOV DS,AX
+        
+        MOV CX,4
+        
+        MOV BX,OFFSET numeros  ;OFFSET Asigna la primera ubicacion de memoria de la cadena de numeros
+        
+        ETA:
+        
+            MOV AL,[BX]         ;MOVER el contenido dado por la [Direccion] a AL
+            ADD AL,5           ; ADDITION +5, SUMAR 5 A AL
+            
+            ;DAA                 ;EFECTUAR BIEN LA SUMA
+            
+            ADD AL,30H
+             
+             
+            LEA DL,AL
+            MOV AH,02
+            INT 21H
+             
+            INC BX              ;INCREMENTAR BX EN 1 O posicion+1
+            
+            LOOP ETA            ; REGRESAR A LA ETIQUETA SI CX NO ES CERO Y CADA QUE SE USA LOOP DECREMETNA CX
+            
+        
+        
+        
+
+        
+        
+        
+        
+        
+
+        
+        
+        MOV AX,4C00H
+        INT 21H 
+         
+        
+        
+        
+     END Main
+            
+
+
+
+
+
